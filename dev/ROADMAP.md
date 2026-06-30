@@ -16,7 +16,7 @@ Exit criteria:
 - [x] Every public item has rustdoc + a runnable example.
 - [x] Core invariants property-tested; `docs/API.md` authored at this stage.
 
-## v1.0.0 - API freeze
+## v1.0.0 - API freeze (DONE)
 Public surface stable and frozen until 2.0.
-- [ ] docs/API.md marked stable; SemVer promise recorded.
-- [ ] Full test + benchmark suite green on all three platforms.
+- [x] docs/API.md marked stable; SemVer promise recorded.
+- [x] Full test + benchmark suite green on all three platforms.

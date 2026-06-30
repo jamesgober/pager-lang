@@ -14,7 +14,7 @@
 </div>
 <br>
 
-> **Status: pre-1.0.** The surface below is being designed across the `0.x` series and will be frozen with a SemVer promise at `1.0.0`. See [SemVer](#semver) and [`dev/ROADMAP.md`](../dev/ROADMAP.md).
+> **Status: stable (1.0).** The surface below is the `1.0` contract: it follows [Semantic Versioning](#semver-promise) and will not change in a breaking way before `2.0`. See [`dev/ROADMAP.md`](../dev/ROADMAP.md).
 
 Virtual and executable memory management for JIT compilers and language runtimes. pager-lang hands out page-aligned regions of memory whose access permissions — read, write, execute — can be changed on demand, with optional guard pages. It is the layer a JIT uses to get memory the CPU will execute, which ordinary heap allocations are not.
 
@@ -39,7 +39,7 @@ Virtual and executable memory management for JIT compilers and language runtimes
   - [`PagerError`](#pagererror)
 - [Executing generated code](#executing-generated-code)
 - [Feature flags](#feature-flags)
-- [SemVer](#semver)
+- [SemVer promise](#semver-promise)
 
 <br>
 <hr>
@@ -49,7 +49,7 @@ Virtual and executable memory management for JIT compilers and language runtimes
 
 ```toml
 [dependencies]
-pager-lang = "0.2"
+pager-lang = "1"
 ```
 
 ```bash
@@ -624,17 +624,24 @@ On architectures with separate instruction and data caches (for example AArch64)
 
 ```toml
 # no_std build:
-pager-lang = { version = "0.2", default-features = false }
+pager-lang = { version = "1", default-features = false }
 
 # with serialization of the value types:
-pager-lang = { version = "0.2", features = ["serde"] }
+pager-lang = { version = "1", features = ["serde"] }
 ```
 
 <br>
 
-## SemVer
+## SemVer promise
 
-This crate is **pre-1.0**. The public surface above may change between minor (`0.x`) versions while it is being designed; it will be frozen and given a SemVer stability promise at `1.0.0`. Pin a `0.2` range and consult the [`CHANGELOG`](../CHANGELOG.md) when upgrading.
+As of `1.0.0` the public surface above is frozen. The crate follows [Semantic Versioning](https://semver.org):
+
+- No documented item is removed or changed in a breaking way within `1.x`; breaking changes wait for `2.0`.
+- New functionality is additive and arrives in minor releases. [`PagerError`](#pagererror) is `#[non_exhaustive]`, so a new failure variant is a minor change, not a breaking one; a `match` on it must keep a wildcard arm.
+- The MSRV is Rust `1.85`; raising it is a minor change, never a patch.
+- Behaviour is part of the contract: a region created today maps, protects, and frees the same way, and the safe accessors gate on protection exactly as documented.
+
+This file is updated in lockstep with every release so it always matches the code.
 
 <br>
 <hr>

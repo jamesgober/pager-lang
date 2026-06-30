@@ -29,7 +29,7 @@
         <strong>MSRV is 1.85+</strong> (Rust 2024 edition).
     </p>
     <blockquote>
-        <strong>Status: pre-1.0, in active development.</strong> The Core memory-management surface has landed (<code>v0.2.0</code>) and is documented in <a href="./docs/API.md"><code>docs/API.md</code></a>. The public API is being designed across the 0.x series and frozen at <code>1.0.0</code>. See <a href="./CHANGELOG.md"><code>CHANGELOG.md</code></a>.
+        <strong>Status: stable.</strong> The public API is frozen as of <code>1.0.0</code> and follows Semantic Versioning, with no breaking changes before <code>2.0</code>. See <a href="./docs/API.md#semver-promise"><code>docs/API.md</code></a> for the SemVer promise and <a href="./CHANGELOG.md"><code>CHANGELOG.md</code></a>.
     </blockquote>
 </div>
 
@@ -55,7 +55,7 @@ The whole API is four things:
 
 ```toml
 [dependencies]
-pager-lang = "0.2"
+pager-lang = "1"
 ```
 
 Or from the terminal:
@@ -166,10 +166,10 @@ Map and protect costs are dominated by the kernel transition and are essentially
 
 ```toml
 # no_std build:
-pager-lang = { version = "0.2", default-features = false }
+pager-lang = { version = "1", default-features = false }
 
 # with serialization of the value types:
-pager-lang = { version = "0.2", features = ["serde"] }
+pager-lang = { version = "1", features = ["serde"] }
 ```
 
 <br>

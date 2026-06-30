@@ -74,9 +74,11 @@
 //!
 //! ## Stability
 //!
-//! Pre-1.0: the public surface is still being designed and may change between minor versions
-//! until it is frozen at `1.0.0`. The current scope and plan are recorded in `docs/API.md`
-//! and `dev/ROADMAP.md`.
+//! The public surface is frozen and stable as of `1.0.0`: it follows Semantic Versioning,
+//! with no breaking changes before `2.0`. [`PagerError`] is `#[non_exhaustive]`, so a new
+//! failure variant is an additive, non-breaking change. The full surface and the SemVer
+//! promise are catalogued in
+//! [`docs/API.md`](https://github.com/jamesgober/pager-lang/blob/main/docs/API.md#semver-promise).
 
 #![cfg_attr(not(feature = "std"), no_std)]
 #![cfg_attr(docsrs, feature(doc_cfg))]

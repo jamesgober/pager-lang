@@ -21,6 +21,16 @@
 
 ---
 
+## [1.0.0] - 2026-06-30
+
+API freeze. The public surface built in 0.2.0 is ratified as the `1.0` contract: it follows Semantic Versioning and carries no breaking changes before `2.0`. A `0.2.0` program compiles and behaves identically; this release adds only the stability documentation.
+
+### Changed
+
+- Marked the public API stable and frozen as of `1.0.0`; recorded the SemVer promise in [`docs/API.md`](docs/API.md#semver-promise) and the crate root.
+
+---
+
 ## [0.2.0] - 2026-06-30
 
 The Core milestone: the virtual and executable memory layer lands. This is the first release with domain logic — it maps page-aligned regions, changes their protection, and frees them on drop, the foundation a JIT needs. The public surface is documented in [`docs/API.md`](docs/API.md) and remains pre-1.0 (subject to change until the `1.0.0` freeze).
@@ -64,6 +74,7 @@ Initial scaffold and repository bootstrap. No domain logic yet &mdash; this rele
 - `.github/workflows/ci.yml` CI matrix; `deny.toml`, `clippy.toml`, `rustfmt.toml`.
 - `dev/DIRECTIVES.md` and `dev/ROADMAP.md` (committed engineering standards + plan).
 
-[Unreleased]: https://github.com/jamesgober/pager-lang/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/jamesgober/pager-lang/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/jamesgober/pager-lang/compare/v0.2.0...v1.0.0
 [0.2.0]: https://github.com/jamesgober/pager-lang/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jamesgober/pager-lang/releases/tag/v0.1.0
