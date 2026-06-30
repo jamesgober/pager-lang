@@ -9,12 +9,12 @@
 Compiles, CI green, structure correct, no domain logic.
 - [x] Manifest, README, CHANGELOG, REPS, dual license, CI, deny, clippy, rustfmt.
 
-## v0.2.0 - Core (THE HARD PART, NOT DEFERRED)
+## v0.2.0 - Core (THE HARD PART, NOT DEFERRED) (DONE)
 Virtual/executable memory regions (mmap/VirtualAlloc, guard pages) - the foundation JIT needs.
-Dependencies (none) are wired here, when first used.
+Dependencies (none) - core path is dependency-free; `serde` stays optional, value-types only.
 Exit criteria:
-- [ ] Every public item has rustdoc + a runnable example.
-- [ ] Core invariants property-tested (full DIRECTIVES + API authored at this stage).
+- [x] Every public item has rustdoc + a runnable example.
+- [x] Core invariants property-tested; `docs/API.md` authored at this stage.
 
 ## v1.0.0 - API freeze
 Public surface stable and frozen until 2.0.
